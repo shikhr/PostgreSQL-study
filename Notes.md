@@ -74,6 +74,16 @@ Delete primary key
 
 (default **constraint_name** for primary key is **{table_name}_pkey**) 
 
+Add column as foreign key
+
+`ALTER TABLE table_name ADD COLUMN column_name DATATYPE CONSTRAINT REFERENCES referenced_table_name(referenced_column_name);`
+
+Add foreign key
+
+`ALTER TABLE table_name ADD CONSTRAINT constraint_name FOREIGN KEY(column_name) REFERENCES referenced_table_name(referenced_column_name);`
+
+(default **constraint_name** for foreign key is **{table_name}_{column_name}_fkey**) 
+
 Set non null
 
 `ALTER TABLE table_name ALTER COLUMN column_name SET NOT NULL;`
@@ -84,7 +94,7 @@ add unique
 
 `ALTER TABLE table_name ADD CONSTRAINT constraint_name UNIQUE (column1, column2,...);`
 
-(default **constraint_name** for unique is **{table_name}_{column_name(s)}_pkey**) 
+(default **constraint_name** for unique is **{table_name}_{column_name(s)}_key**) 
 
 Delete unique
 
