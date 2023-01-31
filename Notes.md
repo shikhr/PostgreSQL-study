@@ -23,8 +23,7 @@ Create database
 
 `CREATE DATABASE database_name WITH OWNER username;`
 
-Drop database![image](https://user-images.githubusercontent.com/73433516/215759533-7f5b338d-b13a-42f4-8adc-6f9f8617c885.png)
-
+Drop database
 
 `DROP DATABASE IF EXISTS database_name;`
 
