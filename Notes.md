@@ -23,7 +23,8 @@ Create database
 
 `CREATE DATABASE database_name WITH OWNER username;`
 
-Drop database
+Drop database![image](https://user-images.githubusercontent.com/73433516/215759533-7f5b338d-b13a-42f4-8adc-6f9f8617c885.png)
+
 
 `DROP DATABASE IF EXISTS database_name;`
 
@@ -113,6 +114,79 @@ Update values
 Delete values
 
 `DELETE FROM table_name WHERE [condition];`
+
+## Where
+
+`
+SELECT column1, column2, columnN
+FROM table_name
+WHERE [search_condition]
+`
+## Pattern Matching
+
+- LIKE
+
+```
+string LIKE pattern [ESCAPE escape-character]
+string NOT LIKE pattern [ESCAPE escape-character]
+(use ILIKE for case insensitive matches)
+```
+
+% : any number of characters (zero or more)
+_ : one single character
+
+eg.
+```
+'abc' LIKE 'abc'    true
+'abc' LIKE 'a%'     true
+'abc' LIKE '_b_'    true
+'abc' LIKE 'c'      false
+```
+
+- SIMILAR TO Regular Expressions
+- POSIX Regular Expressions
+
+
+## ORDER BY
+
+```
+SELECT select_list
+    FROM table_expression
+    ORDER BY sort_expression1 [ASC | DESC] [NULLS { FIRST | LAST }]
+             [, sort_expression2 [ASC | DESC] [NULLS { FIRST | LAST }] ...]
+```
+eg.
+
+`SELECT name FROM students ORDER BY score DESC` will sort the students in descending order of scores.
+
+## Aggregate Functions
+
+count, sum, avg (average), max (maximum) and min (minimum) etc. 
+
+Used on columns and grouped columns to find aggregate values. 
+
+## GROUP BY
+
+```
+SELECT 
+   column_1, 
+   column_2,
+   aggregate_function(column_3)
+FROM 
+   table_name
+GROUP BY 
+   column_1,
+   column_2;
+```
+
+## WHERE vs HAVING
+
+WHERE selects input rows before groups and aggregates are computed (thus, it controls which rows go into the aggregate computation), whereas HAVING selects group rows after groups and aggregates are computed. 
+
+Thus, the WHERE clause must not contain aggregate functions; it makes no sense to try to use an aggregate to determine which rows will be inputs to the aggregates. On the other hand, the HAVING clause always contains aggregate functions.
+
+
+<img src="https://wizardzines.com/comics/sql-query-order/sql-query-order.png" alt="order of operations" width="500" />
 
 ## Joins
 
