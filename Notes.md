@@ -132,6 +132,7 @@ string NOT LIKE pattern [ESCAPE escape-character]
 ```
 
 % : any number of characters (zero or more)
+
 _ : one single character
 
 eg.
@@ -185,7 +186,7 @@ WHERE selects input rows before groups and aggregates are computed (thus, it con
 Thus, the WHERE clause must not contain aggregate functions; it makes no sense to try to use an aggregate to determine which rows will be inputs to the aggregates. On the other hand, the HAVING clause always contains aggregate functions.
 
 
-<img src="https://wizardzines.com/comics/sql-query-order/sql-query-order.png" alt="order of operations" width="500" />
+<img src="https://wizardzines.com/zines/sql/samples/from.png" alt="order of operations" width="500" />
 
 ## Joins
 
